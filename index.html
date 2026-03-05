@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Canales de Comunicación | CAMDP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        walmart: {
+                            blue: '#0053e2',
+                            blueDark: '#003d9b',
+                            blueLight: '#e6eefb',
+                            spark: '#ffc220',
+                            sparkDark: '#995213',
+                            sparkLight: '#fff8e6',
+                            green: '#2a8703',
+                            greenLight: '#e8f5e3',
+                            red: '#ea1100',
+                            redLight: '#fde8e6',
+                            gray10: '#f8f8f8',
+                            gray50: '#c0c0c0',
+                            gray100: '#74767c',
+                            gray160: '#2e2f32',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .spark-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #0053e2, #ffc220, #0053e2);
+        }
+        .channel-card {
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
+        }
+        .channel-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+        .channel-teams { border-left-color: #5b5fc7; }
+        .channel-email { border-left-color: #0053e2; }
+        .channel-ticket { border-left-color: #2a8703; }
+        .channel-meeting { border-left-color: #ffc220; }
+        .urgency-badge {
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .flow-arrow {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .decision-node {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        .tip-card {
+            border-left: 4px solid #ffc220;
+        }
+    </style>
+</head>
+<body class="bg-white text-walmart-gray160">
+
+    <!-- Header -->
+    <header class="bg-walmart-blue text-white">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-walmart-spark text-3xl">✦</span>
+                        <span class="text-sm font-medium bg-white/20 px-3 py-1 rounded-full">Comunicado Interno</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                        Guía de Canales de<br>Comunicación
+                    </h1>
+                    <p class="mt-3 text-blue-200 text-lg max-w-xl">
+                        ¿Cuándo usar cada canal? Optimicemos nuestra comunicación para ser más efectivos en el seguimiento de tareas, requerimientos y proyectos.
+                    </p>
+                </div>
+                <div class="hidden md:flex flex-col items-center gap-2">
+                    <div class="text-6xl">📡</div>
+                    <span class="text-xs text-blue-200">Comunica mejor,<br>logra más</span>
+                </div>
+            </div>
+        </div>
+        <div class="spark-divider"></div>
+    </header>
+
+    <!-- Principio Clave -->
+    <section class="max-w-6xl mx-auto px-6 py-8">
+        <div class="bg-walmart-sparkLight border border-walmart-spark/30 rounded-xl p-6 text-center">
+            <p class="text-walmart-sparkDark font-semibold text-lg">
+                <i class="fas fa-lightbulb text-walmart-spark mr-2"></i>
+                Principio clave: <span class="font-bold">"El canal correcto en el momento correcto acelera resultados y reduce ruido."</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Resumen Rápido Visual -->
+    <section class="max-w-6xl mx-auto px-6 pb-8">
+        <h2 class="text-2xl font-bold text-walmart-blue mb-6 flex items-center gap-2">
+            <span class="text-walmart-spark">✦</span> Resumen Rápido
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Teams -->
+            <div class="bg-[#5b5fc7]/10 rounded-xl p-5 text-center border border-[#5b5fc7]/20">
+                <div class="text-4xl mb-3"><i class="fab fa-microsoft" style="color:#5b5fc7"></i></div>
+                <h3 class="font-bold text-lg" style="color:#5b5fc7">Microsoft Teams</h3>
+                <p class="text-sm text-walmart-gray100 mt-2">Dudas rápidas, coordinación diaria, avisos informales</p>
+                <div class="mt-3">
+                    <span class="urgency-badge bg-green-100 text-green-800">⚡ Respuesta rápida</span>
+                </div>
+            </div>
+            <!-- Correo -->
+            <div class="bg-walmart-blueLight rounded-xl p-5 text-center border border-walmart-blue/20">
+                <div class="text-4xl mb-3"><i class="fas fa-envelope" style="color:#0053e2"></i></div>
+                <h3 class="font-bold text-lg text-walmart-blue">Correo Electrónico</h3>
+                <p class="text-sm text-walmart-gray100 mt-2">Comunicaciones formales, aprobaciones, escalaciones</p>
+                <div class="mt-3">
+                    <span class="urgency-badge bg-blue-100 text-blue-800">📋 Formal y trazable</span>
+                </div>
+            </div>
+            <!-- Ticket -->
+            <div class="bg-walmart-greenLight rounded-xl p-5 text-center border border-walmart-green/20">
+                <div class="text-4xl mb-3"><i class="fas fa-ticket" style="color:#2a8703"></i></div>
+                <h3 class="font-bold text-lg text-walmart-green">Ticket / Jira</h3>
+                <p class="text-sm text-walmart-gray100 mt-2">Requerimientos, bugs, seguimiento de tareas formales</p>
+                <div class="mt-3">
+                    <span class="urgency-badge bg-green-100 text-green-800">🔄 Seguimiento formal</span>
+                </div>
+            </div>
+            <!-- Reuniones -->
+            <div class="bg-walmart-sparkLight rounded-xl p-5 text-center border border-walmart-spark/20">
+                <div class="text-4xl mb-3"><i class="fas fa-users" style="color:#995213"></i></div>
+                <h3 class="font-bold text-lg text-walmart-sparkDark">Reuniones</h3>
+                <p class="text-sm text-walmart-gray100 mt-2">Decisiones complejas, alineación, demos, retrospectivas</p>
+                <div class="mt-3">
+                    <span class="urgency-badge bg-yellow-100 text-yellow-800">🤝 Colaboración profunda</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalle por Canal -->
+    <section class="max-w-6xl mx-auto px-6 pb-10">
+        <h2 class="text-2xl font-bold text-walmart-blue mb-6 flex items-center gap-2">
+            <span class="text-walmart-spark">✦</span> Detalle por Canal
+        </h2>
+
+        <!-- TEAMS -->
+        <div class="channel-card channel-teams bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0" style="background:#5b5fc7">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold" style="color:#5b5fc7">Microsoft Teams</h3>
+                    <p class="text-walmart-gray100 text-sm mt-1">Canal de comunicación ágil e informal</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-5">
+                        <div>
+                            <h4 class="font-semibold text-walmart-green flex items-center gap-2 mb-3">
+                                <i class="fas fa-check-circle"></i> Úsalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Preguntas rápidas sobre el estado de una tarea</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Coordinación del día a día del equipo</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Compartir enlaces, documentos o recursos rápidos</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Avisos informales ("ya subí el cambio", "voy tarde")</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Lluvia de ideas o discusiones breves</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Pedir feedback rápido antes de formalizar</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-walmart-red flex items-center gap-2 mb-3">
+                                <i class="fas fa-times-circle"></i> Evítalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Solicitudes formales de requerimientos nuevos</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Aprobaciones que necesitan trazabilidad</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Reportes de bugs o incidentes (usa Ticket)</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Discusiones que requieren más de 10 min de ida y vuelta</li>
+                            </ul>
+                            <div class="tip-card bg-walmart-sparkLight p-3 rounded-r-lg mt-4">
+                                <p class="text-xs text-walmart-sparkDark"><strong>💡 Tip:</strong> Si el hilo de Teams supera los 5 mensajes, agenda una reunión corta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CORREO -->
+        <div class="channel-card channel-email bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl bg-walmart-blue flex items-center justify-center text-white text-2xl flex-shrink-0">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold text-walmart-blue">Correo Electrónico</h3>
+                    <p class="text-walmart-gray100 text-sm mt-1">Canal formal con trazabilidad completa</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-5">
+                        <div>
+                            <h4 class="font-semibold text-walmart-green flex items-center gap-2 mb-3">
+                                <i class="fas fa-check-circle"></i> Úsalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Solicitar aprobaciones formales</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Comunicar decisiones que deben quedar documentadas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Escalaciones a management o liderazgo</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Compartir reportes de avance semanales/mensuales</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Notificaciones de cambios de alcance o fechas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Comunicación con stakeholders externos al equipo</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-walmart-red flex items-center gap-2 mb-3">
+                                <i class="fas fa-times-circle"></i> Evítalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Preguntas que necesitan respuesta inmediata</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Conversaciones de ida y vuelta rápida</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Enviar instrucciones técnicas complejas (usa documentación)</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Debates con múltiples participantes (agenda reunión)</li>
+                            </ul>
+                            <div class="tip-card bg-walmart-sparkLight p-3 rounded-r-lg mt-4">
+                                <p class="text-xs text-walmart-sparkDark"><strong>💡 Tip:</strong> Usa asuntos claros: <em>"[CAMDP] Aprobación - Cambio de alcance Sprint 12"</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TICKET -->
+        <div class="channel-card channel-ticket bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl bg-walmart-green flex items-center justify-center text-white text-2xl flex-shrink-0">
+                    <i class="fas fa-ticket"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold text-walmart-green">Ticket / Jira / Sistema de Gestión</h3>
+                    <p class="text-walmart-gray100 text-sm mt-1">Fuente de verdad para el trabajo del equipo</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-5">
+                        <div>
+                            <h4 class="font-semibold text-walmart-green flex items-center gap-2 mb-3">
+                                <i class="fas fa-check-circle"></i> Úsalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> <strong>Todo</strong> requerimiento nuevo (funcional o técnico)</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Reporte de bugs e incidentes</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Seguimiento del progreso de tareas y épicas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Documentar criterios de aceptación</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Registrar estimaciones y prioridades</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Cualquier cosa que necesite <strong>asignación</strong> y <strong>fecha límite</strong></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-walmart-red flex items-center gap-2 mb-3">
+                                <i class="fas fa-times-circle"></i> Evítalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Conversaciones informales o sociales</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Preguntas tipo "¿cómo va todo?"</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Discusiones de diseño extensas (usa reunión + documenta)</li>
+                            </ul>
+                            <div class="tip-card bg-walmart-sparkLight p-3 rounded-r-lg mt-4">
+                                <p class="text-xs text-walmart-sparkDark"><strong>💡 Regla de oro:</strong> Si no está en un ticket, no existe. Todo trabajo debe tener un ticket asociado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REUNIONES -->
+        <div class="channel-card channel-meeting bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0" style="background:#995213">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold text-walmart-sparkDark">Reuniones</h3>
+                    <p class="text-walmart-gray100 text-sm mt-1">Espacio para alineación, decisiones y colaboración profunda</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mt-5">
+                        <div>
+                            <h4 class="font-semibold text-walmart-green flex items-center gap-2 mb-3">
+                                <i class="fas fa-check-circle"></i> Úsalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Decisiones que involucran a múltiples personas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Planificación de sprints y roadmap</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Demos de funcionalidades terminadas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Retrospectivas y lecciones aprendidas</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Resolución de bloqueos complejos</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-green mt-1">•</span> Onboarding de nuevos miembros</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-walmart-red flex items-center gap-2 mb-3">
+                                <i class="fas fa-times-circle"></i> Evítalo para:
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Temas que se resuelven con un mensaje de Teams</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Compartir información que puede ir por correo</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Reuniones sin agenda clara (¡no!)</li>
+                                <li class="flex items-start gap-2"><span class="text-walmart-red mt-1">•</span> Status updates que pueden ser asíncronos</li>
+                            </ul>
+                            <div class="tip-card bg-walmart-sparkLight p-3 rounded-r-lg mt-4">
+                                <p class="text-xs text-walmart-sparkDark"><strong>💡 Tip:</strong> Toda reunión debe tener: agenda previa, duración definida, y acta con acciones en un ticket.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Árbol de Decisión -->
+    <section class="bg-walmart-gray10 py-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-walmart-blue mb-8 flex items-center gap-2">
+                <span class="text-walmart-spark">✦</span> ¿No sabes qué canal usar? Sigue este flujo
+            </h2>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="space-y-4">
+                    <!-- Step 1 -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-walmart-blue text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div class="flex-1 bg-walmart-blueLight rounded-lg p-4">
+                            <p class="font-semibold text-walmart-blue">¿Necesita quedar registrado como trabajo formal?</p>
+                            <div class="flex gap-4 mt-2 text-sm">
+                                <span class="bg-walmart-green text-white px-3 py-1 rounded-full">Sí → <strong>Crea un Ticket</strong> 🎫</span>
+                                <span class="bg-walmart-gray50 text-white px-3 py-1 rounded-full">No → Sigue al paso 2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="flex justify-center text-walmart-blue flow-arrow text-xl"><i class="fas fa-arrow-down"></i></div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-walmart-blue text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div class="flex-1 bg-walmart-blueLight rounded-lg p-4">
+                            <p class="font-semibold text-walmart-blue">¿Requiere aprobación formal o necesita trazabilidad?</p>
+                            <div class="flex gap-4 mt-2 text-sm">
+                                <span class="bg-walmart-blue text-white px-3 py-1 rounded-full">Sí → <strong>Envía un Correo</strong> ✉️</span>
+                                <span class="bg-walmart-gray50 text-white px-3 py-1 rounded-full">No → Sigue al paso 3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="flex justify-center text-walmart-blue flow-arrow text-xl"><i class="fas fa-arrow-down"></i></div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-walmart-blue text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div class="flex-1 bg-walmart-blueLight rounded-lg p-4">
+                            <p class="font-semibold text-walmart-blue">¿Involucra a 3+ personas y necesita discusión en tiempo real?</p>
+                            <div class="flex gap-4 mt-2 text-sm">
+                                <span class="px-3 py-1 rounded-full text-white" style="background:#995213">Sí → <strong>Agenda una Reunión</strong> 🤝</span>
+                                <span class="bg-walmart-gray50 text-white px-3 py-1 rounded-full">No → Sigue al paso 4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="flex justify-center text-walmart-blue flow-arrow text-xl"><i class="fas fa-arrow-down"></i></div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-walmart-blue text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                        <div class="flex-1 rounded-lg p-4" style="background:#5b5fc7;color:white">
+                            <p class="font-semibold">Para todo lo demás → <strong>Manda un mensaje por Teams</strong> 💬</p>
+                            <p class="text-sm mt-1 text-white/80">Consultas rápidas, coordinación, compartir info, avisos informales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabla Resumen por Escenario -->
+    <section class="max-w-6xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-bold text-walmart-blue mb-6 flex items-center gap-2">
+            <span class="text-walmart-spark">✦</span> Escenarios Comunes
+        </h2>
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse" role="table" aria-label="Escenarios comunes de comunicación">
+                <thead>
+                    <tr class="bg-walmart-blue text-white">
+                        <th class="text-left p-4 rounded-tl-lg font-semibold">Escenario</th>
+                        <th class="text-center p-4 font-semibold">Canal Recomendado</th>
+                        <th class="text-center p-4 rounded-tr-lg font-semibold">Urgencia</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-gray-100 hover:bg-walmart-gray10">
+                        <td class="p-4">Nuevo requerimiento de negocio</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-greenLight text-walmart-green px-3 py-1 rounded-full font-medium">🎫 Ticket</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-blue-100 text-blue-700">Normal</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-walmart-gray10/50 hover:bg-walmart-gray10">
+                        <td class="p-4">Bug en producción</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-greenLight text-walmart-green px-3 py-1 rounded-full font-medium">🎫 Ticket</span> + <span class="bg-[#5b5fc7]/10 px-3 py-1 rounded-full font-medium" style="color:#5b5fc7">💬 Teams</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-red-100 text-red-700">🔥 Urgente</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-walmart-gray10">
+                        <td class="p-4">Solicitar aprobación de cambio de alcance</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-blueLight text-walmart-blue px-3 py-1 rounded-full font-medium">✉️ Correo</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-yellow-100 text-yellow-700">Media</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-walmart-gray10/50 hover:bg-walmart-gray10">
+                        <td class="p-4">Preguntar quién tiene acceso a un repo</td>
+                        <td class="p-4 text-center"><span class="bg-[#5b5fc7]/10 px-3 py-1 rounded-full font-medium" style="color:#5b5fc7">💬 Teams</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-green-100 text-green-700">Baja</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-walmart-gray10">
+                        <td class="p-4">Planificar el próximo sprint</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-sparkLight text-walmart-sparkDark px-3 py-1 rounded-full font-medium">🤝 Reunión</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-blue-100 text-blue-700">Normal</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-walmart-gray10/50 hover:bg-walmart-gray10">
+                        <td class="p-4">Reportar avance semanal al PM</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-blueLight text-walmart-blue px-3 py-1 rounded-full font-medium">✉️ Correo</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-blue-100 text-blue-700">Normal</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-walmart-gray10">
+                        <td class="p-4">Definir arquitectura de un módulo nuevo</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-sparkLight text-walmart-sparkDark px-3 py-1 rounded-full font-medium">🤝 Reunión</span> + <span class="bg-walmart-greenLight text-walmart-green px-3 py-1 rounded-full font-medium">🎫 Ticket</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-yellow-100 text-yellow-700">Media</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 bg-walmart-gray10/50 hover:bg-walmart-gray10">
+                        <td class="p-4">Avisar que ya desplegaste a staging</td>
+                        <td class="p-4 text-center"><span class="bg-[#5b5fc7]/10 px-3 py-1 rounded-full font-medium" style="color:#5b5fc7">💬 Teams</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-green-100 text-green-700">Baja</span></td>
+                    </tr>
+                    <tr class="border-b border-gray-100 hover:bg-walmart-gray10">
+                        <td class="p-4">Escalar un bloqueo al liderazgo</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-blueLight text-walmart-blue px-3 py-1 rounded-full font-medium">✉️ Correo</span> + <span class="bg-walmart-sparkLight text-walmart-sparkDark px-3 py-1 rounded-full font-medium">🤝 Reunión</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-red-100 text-red-700">🔥 Urgente</span></td>
+                    </tr>
+                    <tr class="hover:bg-walmart-gray10">
+                        <td class="p-4">Solicitar acceso a un sistema</td>
+                        <td class="p-4 text-center"><span class="bg-walmart-greenLight text-walmart-green px-3 py-1 rounded-full font-medium">🎫 Ticket</span></td>
+                        <td class="p-4 text-center"><span class="urgency-badge bg-blue-100 text-blue-700">Normal</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Reglas de Oro -->
+    <section class="bg-walmart-blue text-white py-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="text-walmart-spark">✦</span> Reglas de Oro de Comunicación
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+                    <div class="text-walmart-spark text-4xl font-extrabold opacity-50 mb-2">01</div>
+                    <h4 class="font-bold text-walmart-spark">Sin Ticket, no existe</h4>
+                    <p class="text-sm text-blue-200 mt-2">Todo requerimiento nuevo o bug debe tener un ticket antes de iniciar el trabajo. Lo que no se registra no se prioriza ni se entrega.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+                    <div class="text-walmart-spark text-4xl font-extrabold opacity-50 mb-2">02</div>
+                    <h4 class="font-bold text-walmart-spark">Teams no reemplaza al Ticket</h4>
+                    <p class="text-sm text-blue-200 mt-2">Un mensaje en Teams no es un acuerdo de trabajo. Para que algo sea atendido formalmente, debe estar documentado en el sistema.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+                    <div class="text-walmart-spark text-4xl font-extrabold opacity-50 mb-2">03</div>
+                    <h4 class="font-bold text-walmart-spark">Correo = Evidencia Formal</h4>
+                    <p class="text-sm text-blue-200 mt-2">Usa el correo cuando necesites dejar evidencia de acuerdos, aprobaciones o comunicaciones que involucren varias áreas o liderazgo.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+                    <div class="text-walmart-spark text-4xl font-extrabold opacity-50 mb-2">04</div>
+                    <h4 class="font-bold text-walmart-spark">Reunión con propósito</h4>
+                    <p class="text-sm text-blue-200 mt-2">No toda duda necesita reunión. Convoca solo cuando se requiera decisión grupal o alineación compleja. Siempre envía agenda previa y minuta al terminar.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+                    <div class="text-walmart-spark text-4xl font-extrabold opacity-50 mb-2">05</div>
+                    <h4 class="font-bold text-walmart-spark">Cierra el loop</h4>
+                    <p class="text-sm text-blue-200 mt-2">Si alguien te pregunta algo, siempre responde aunque sea "lo reviso mañana". El silencio genera incertidumbre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-walmart-gray160 text-white py-6">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="text-walmart-spark text-xl">✦</span>
+                    <span class="text-sm text-gray-400">CAMDP | Guía de Comunicación | Marzo 2025</span>
+                </div>
+                <p class="text-xs text-gray-500">Comunicar bien es respetar el tiempo de todos.</p>
+            </div>
+        </div>
+        <div class="spark-divider mt-4"></div>
+    </footer>
+
+</body>
+</html>
